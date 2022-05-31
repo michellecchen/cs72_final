@@ -1,25 +1,3 @@
-1m
-
-
-
-
-
-
-printClassifiersForConfusion(conSentences, 25)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {'sequence': " You'll be asked to wear one hat but will be manipulated into performing for three", 'labels': ['work life balance', 'career opportunities', 'compensation and benefits', 'culture and values', 'diversity and inclusion', 'senior management'], 'scores': [0.2737371623516083, 0.19393578171730042, 0.173788920044899, 0.15527768433094025, 0.11464542150497437, 0.0886150375008583]}
 {'sequence': ' Management to employee communication is so bad that, by just telling needs and asking for requests is seen as a communication', 'labels': ['culture and values', 'work life balance', 'senior management', 'compensation and benefits', 'diversity and inclusion', 'career opportunities'], 'scores': [0.2447267770767212, 0.18882426619529724, 0.15831145644187927, 0.14489176869392395, 0.14248444139957428, 0.12076131254434586]}
 {'sequence': ' Senior management tends to hire people as Rioters fast that are not even gamers or tries to recruit within the company just cause they urgently need someone to fill the position as they have other plans in mind, which literally leads to a corruption of values', 'labels': ['senior management', 'culture and values', 'career opportunities', 'work life balance', 'diversity and inclusion', 'compensation and benefits'], 'scores': [0.8307153582572937, 0.10562587529420853, 0.04570075124502182, 0.012497064657509327, 0.0031292797066271305, 0.002331746509298682]}
