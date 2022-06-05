@@ -7,6 +7,56 @@ Emails: michelle.chen.22@dartmouth.edu, leah.ryu.22@dartmouth.edu
 
 Welcome to our CS72 (Accelerated Computational Linguistics) final project for spring 2022! Please read through the following, which discusses motivation, algorithms, data, code organization, and setup instructions.
 
+### Code organization
+```
+├── README.md
+├── classifiedDataGlassdoor
+│   ├── <zero shot classified pros sentences for each company> (4 files)
+│   └── <zero shot classified cons sentences for each company> (4 files)
+├── classifiedDataIndeed
+│   ├── <zero shot classified neutral sentences for each company> (4 files)
+│   ├── <zero shot classified pros sentences for each company> (4 files)
+│   ├── <zero shot classified cons sentences for each company> (4 files)
+│   ├── <corresponding dates for neutral sentences for each co> (4 files)
+│   ├── <corresponding dates for pros sentences for each co> (4 files)
+│   └── <corresponding dates for cons sentences for each co> (4 files)
+├── confusionData
+│   ├── .gitignore
+│   ├── REQUIREMENTS.md	
+│   ├── DESIGN.md
+│   ├── IMPLEMENTATION.md
+│   ├── Makefile
+│   ├── README.md
+│   ├── indexer.c
+│   ├── indextest.c
+│   ├── testing.sh
+│   └── testing.out
+├── libcs50
+│   ├── .gitignore
+│   ├── Makefile
+│   ├── README.md
+│   ├── bag.c
+│   ├── bag.h
+│   ├── counters.c	# if you decided to add your Lab3 solution
+│   ├── counters.h
+│   ├── file.c
+│   ├── file.h
+│   ├── file.md
+│   ├── hashtable.c	# if you decided to add your Lab3 solution
+│   ├── hashtable.h
+│   ├── jhash.c
+│   ├── jhash.h
+│   ├── libcs50-given.a
+│   ├── memory.c
+│   ├── memory.h
+│   ├── memory.md
+│   ├── set.c		# if you decided to add your Lab3 solution
+│   ├── set.h
+│   ├── webpage.c
+│   ├── webpage.h
+│   └── webpage.md
+```
+
 ### Motivation and proposal
 
 Many workplaces, when hiring, advertise themselves as inclusive or progressive to pique the interest of prospective employees. These publicity statements, however, do not necessarily translate into equitable treatment for actual employees behind the scenes. In the interest of preserving a company’s public image, incidents of harassment and discrimination often go undisclosed — especially when committed by authority/seniority figures against lower-ranking employees — and will only become known to outsiders when a great amount of harm has been committed, across a large stretch of time (i.e. exposés & employment discrimination lawsuits). Due to their containment as “insider knowledge” in the majority of cases, it is difficult for prospective employees to learn of these abuses before applying to work at the places they are committed.
@@ -26,14 +76,14 @@ We use Python to make timelines.
 
 ### Data 
 
-We have scraped 5232 reviews from Glassdoor and 667 reviews from Indeed. We leveraged the online web service Page2API to do so, using [this tutorial on scraping reviews from Glassdoor.] (https://www.page2api.com/blog/how-to-scrape-glassdoor-reviews/) To scrape for reviews from Indeed is essentially the same process, but 
+We have scraped 5232 reviews from Glassdoor and 667 reviews from Indeed. We leveraged the online web service Page2API to do so, using [this tutorial on scraping reviews from Glassdoor.] (https://www.page2api.com/blog/how-to-scrape-glassdoor-reviews/) To scrape for reviews from Indeed is essentially the same process, but the payload now looks something like:
 
-```
-api_url = "https://www.page2api.com/api/v1/scrape/encoded/eyJhcGlfa2V5IjoiNzhhNjNkNWM3MTI2ZGM4ODIxNmNhODBmZWUzODIyZGRlMThkNmZiOCIsImJhdGNoIjp7InVybHMiOiJodHRwczovL3d3dy5pbmRlZWQuY29tL2NtcC9BY3RpdmlzaW9uL3Jldmlld3M_ZmNvdW50cnk9QUxMJnN0YXJ0PVswLCA4MCwgMjBdJmxhbmc9ZW4iLCJjb25jdXJyZW5jeSI6MSwibWVyZ2VfcmVzdWx0cyI6dHJ1ZX0sInJhdyI6eyJrZXkiOiJyZXZpZXdzIiwiZm9ybWF0IjoiY3N2In0sInBhcnNlIjp7InJldmlld3MiOlt7Il9wYXJlbnQiOiJbaXRlbXByb3A9cmV2aWV3XSIsInRpdGxlIjoiaDJbZGF0YS10ZXN0aWQ9dGl0bGVdID4-IHRleHQiLCJhdXRob3JfdHlwZSI6InNwYW5baXRlbXByb3A9YXV0aG9yXSA-PiB0ZXh0IiwiY29udGVudCI6InNwYW5baXRlbXByb3A9cmV2aWV3Qm9keV0gPj4gdGV4dCIsInJhdGluZyI6Im1ldGFbaXRlbXByb3A9cmF0aW5nVmFsdWVdID4-IGNvbnRlbnQiLCJwcm9zIjoiZGl2W2RhdGEtdG4tY29tcG9uZW50PSdyZXZpZXdEZXNjcmlwdGlvbiddICsgZGl2ID4gZGl2IGRpdjpudGgtb2YtdHlwZSgxKSA-IGRpdiA-IHNwYW4gPj4gdGV4dCIsImNvbnMiOiJkaXZbZGF0YS10bi1jb21wb25lbnQ9J3Jldmlld0Rlc2NyaXB0aW9uJ10gKyBkaXYgPiBkaXYgZGl2Om50aC1vZi10eXBlKDIpID4gZGl2ID4gc3BhbiA-PiB0ZXh0In1dfX0"
+```python
+api_url = "URL_GENERATED_ON_TUTORIAL_WEBSITE"
 payload = {
-  "api_key": "78a63d5c7126dc88216ca80fee3822dde18d6fb8",
+  "api_key": "MY_PAGE2API_KEY",
   "batch": {
-    "urls": "https://www.indeed.com/cmp/Riot-Games/reviews?fcountry=ALL&start=[0, 40, 20]&lang=en",
+    "urls": "https://www.indeed.com/cmp/Example_Company/reviews?fcountry=ALL&start=[0, 40, 20]&lang=en",
     "concurrency": 1,
     "merge_results": True
   },
@@ -54,7 +104,10 @@ payload = {
     ]
   }
 }
+```
 
+We can also use the following code to download our scraped results directly into a `.csv`. 
+```python
 req = requests.get(api_url)
 url_content = req.content
 csv_file = open('allActivisionBlizzardIndeed.csv', 'ab')
@@ -62,10 +115,6 @@ csv_file = open('allActivisionBlizzardIndeed.csv', 'ab')
 csv_file.write(url_content)
 csv_file.close()
 ```
-
-### Code organization
-
-
 
 ### Conda instructions
 
