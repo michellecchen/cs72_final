@@ -10,6 +10,8 @@ Welcome to our CS72 (Accelerated Computational Linguistics) final project for sp
 ### Code organization
 ```
 ├── README.md
+├── confusionMatrix.ipynb (generates confusion matrices for zero shot classification)
+├── finetuneBERTreviews.ipynb (contains our BERT, which we finetune)
 ├── classifiedDataGlassdoor
 │   ├── <zero shot classified pros sentences for each company> (4 files)
 │   └── <zero shot classified cons sentences for each company> (4 files)
@@ -21,40 +23,19 @@ Welcome to our CS72 (Accelerated Computational Linguistics) final project for sp
 │   ├── <corresponding dates for pros sentences for each co> (4 files)
 │   └── <corresponding dates for cons sentences for each co> (4 files)
 ├── confusionData
-│   ├── .gitignore
-│   ├── REQUIREMENTS.md	
-│   ├── DESIGN.md
-│   ├── IMPLEMENTATION.md
-│   ├── Makefile
-│   ├── README.md
-│   ├── indexer.c
-│   ├── indextest.c
-│   ├── testing.sh
-│   └── testing.out
-├── libcs50
-│   ├── .gitignore
-│   ├── Makefile
-│   ├── README.md
-│   ├── bag.c
-│   ├── bag.h
-│   ├── counters.c	# if you decided to add your Lab3 solution
-│   ├── counters.h
-│   ├── file.c
-│   ├── file.h
-│   ├── file.md
-│   ├── hashtable.c	# if you decided to add your Lab3 solution
-│   ├── hashtable.h
-│   ├── jhash.c
-│   ├── jhash.h
-│   ├── libcs50-given.a
-│   ├── memory.c
-│   ├── memory.h
-│   ├── memory.md
-│   ├── set.c		# if you decided to add your Lab3 solution
-│   ├── set.h
-│   ├── webpage.c
-│   ├── webpage.h
-│   └── webpage.md
+│   ├── <25 zero shot classifiers for negative sentences for each co> (4 files)
+│   ├── <25 zero shot classifiers for positive sentences for each co> (4 files)
+│   ├── screenshots of some confusion matrix results 
+│   ├── confusion matrix for 185 classified sentences (confusionMatrix185.txt)
+│   └── precision, recall, f-score, and support scores for the matrix above (scoresFromMatrix.txt)
+├── glassDoorZeroShot
+│   └── <.ipynb notebooks for parsing and classifying sentences from Glassdoor reviews for each co> (4 files)
+├── indeedZeroShot
+│   └── <.ipynb notebooks for parsing and classifying sentences from Indeed reviews for each co> (4 files)
+├── rawData
+│   ├── <.csv files for Indeed reviews for each co> (4 files)
+│   └── <.csv files for Glassdoor reviews for each co> (4 files)
+└──
 ```
 
 ### Motivation and proposal
