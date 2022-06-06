@@ -7,7 +7,7 @@ Emails: michelle.chen.22@dartmouth.edu, leah.ryu.22@dartmouth.edu
 
 Welcome to our CS72 (Accelerated Computational Linguistics) final project for spring 2022! Please read through the following, which discusses code organization, motivation, algorithms, data, work partition, and setup instructions.
 
-### Organization
+## Organization
 
 The final project requirements ask for five modules: our code, our work partition, our data, screenshots of our program's output, and our writeup. Each module can be found in the following location:
 
@@ -50,7 +50,7 @@ This is how the directories are organized:
 └──
 ```
 
-### Motivation and proposal
+## Motivation and proposal
 
 Many workplaces, when hiring, advertise themselves as inclusive or progressive to pique the interest of prospective employees. These publicity statements, however, do not necessarily translate into equitable treatment for actual employees behind the scenes. In the interest of preserving a company’s public image, incidents of harassment and discrimination often go undisclosed — especially when committed by authority/seniority figures against lower-ranking employees — and will only become known to outsiders when a great amount of harm has been committed, across a large stretch of time (i.e. exposés & employment discrimination lawsuits). Due to their containment as “insider knowledge” in the majority of cases, it is difficult for prospective employees to learn of these abuses before applying to work at the places they are committed.
 
@@ -58,7 +58,7 @@ There are avenues to “insider knowledge” that job seekers may access. One of
 
 Given the above problem, we propose a system that (a) parses all employee-written reviews on Glassdoor and Indeed for four given gaming software companies, respectively – Activision Blizzard, Riot Games, Sony, and Ubisoft –  which have faced lawsuits or allegations of discrimination/harrassment from former employees (b) classifies every sentence from each review by topic – essentially, we want to filter out reviews having to do with free food and merch, for example, (c) performs a sentiment analysis on the sentences classified as relating to interpersonal workplace dynamics (i.e. workplace culture, authority figures and their behavior, etc.), and (d) investigates how employee sentiment changes (if at all) leading up to, as well as in the aftermath of, significant events relating to harassment/discrimination in the company, as documented by exposés and lawsuits (i.e. targeted layoffs, relevant authority figures entering/leaving positions, etc.). Part D will be visualized using timelines.
 
-### Algorithms / approach
+## Algorithms / approach
 We want to examine reviews relating to a few topics predefined by ourselves as the researchers: Culture and Values, Diversity and Inclusion, Work/Life Balance, Senior Management, Compensation and Benefits, and Career Opportunities. To do this, we apply zero-shot classification to our data. Zero-shot classification is an unsupervised learning algorithm which allows us to give a predefined set of topics and match an input string, such as a sentence, to one of those topics by probability. We can have those probabilities add up to 1 and simply choose the topic with the highest probability, or we can calculate the probability of each class independently; in our case, we will be using the zero-shot classification pipeline from Hugging Face (based on transformers), so we can reasonably assume that the former approach will yield accurate results. Here is the Python documentation from Hugging Face, as well as a use-case example from Towards Data Science: https://huggingface.co/facebook/bart-large-mnli, https://towardsdatascience.com/zero-shot-text-classification-with-hugging-face-7f533ba83cd6. We also manually classify around 200 sentences so that we can generate a confusion matrix to evaluate the zero shot classification.
 
 For the sentiment analysis, we fine-tune a BERT classifier to label each review as positive or negative. To do this, we rely on a dataset whose contents have already been labeled as positive or negative. Fortunately, Glassdoor reviews have corresponding “pros” and “cons” sections — which we can apply as default, to review sentences as positive or negative. Each Indeed review also has an optional pros/cons structure, as well as a general commentary section. We plan on using the definitively labeled pros/cons sentences as training and validation data — then, using the BERT to label the “general” commentary. As output, we will receive labels for each sentence, which we can then aggregate into a score for each company per topic. 
@@ -67,7 +67,7 @@ Here are a couple of resources on fine-tuning a BERT (the first source is about 
 
 We use Python to make timelines.
 
-### Data 
+## Data 
 
 We have scraped 5232 reviews from Glassdoor and 667 reviews from Indeed. We leveraged the online web service Page2API to do so, using [this tutorial on scraping reviews from Glassdoor.] (https://www.page2api.com/blog/how-to-scrape-glassdoor-reviews/) To scrape for reviews from Indeed is essentially the same process, but the payload now looks something like:
 
@@ -109,7 +109,7 @@ csv_file.write(url_content)
 csv_file.close()
 ```
 
-### Work Partition
+## Work Partition
 
 There are two group members: Leah (`nonsensicle`) and Michelle (`michellecchen`). Leah scraped the raw data from Indeed and Glassdoor using page2API and parsed it according to pros and cons by implementing the zero shot classification code. She also implemented the BERT and authored the confusion amtrix generation. Michelle was in charge of timelines--she implemented the `matplotlib` timeline code and did the date parsing / sentiment score aggregation for all the data. She also parsed the neutral testing sets for the fine-tuned BERT. 
 Both were in charge of documentation/writeups and organization. Leah wrote this README--contact them at `leah.ryu.22@dartmouth.edu` with questions.
