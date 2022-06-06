@@ -51,7 +51,7 @@ Out of 46 sentences we labeled as pertaining to compensation and benefits, about
 ### Running on CPU, batch size 64
 Classification report for BERT fine-tuned with two epochs, 75:16:8 training:validation:testing data split, and 12300 total sentences:
 
-(note: the split was originally 70:15:15, but we were unable to run predictions on the 15% testing dataset using CPU + the normal version of Colaboratory, so we took halved the testing data)
+(note: the split was originally 70:15:15, but we were unable to run predictions on the 15% testing dataset using CPU + the normal version of Colaboratory, so we halved the testing data)
 
 ![two epochs](https://github.com/michellecchen/cs72_final/blob/main/BERTscores/twoEpochFullTrainValHalfTest.png?raw=true)
 
