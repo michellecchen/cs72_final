@@ -8,6 +8,7 @@ Third and finally, we will show the output that these two algorithms have been u
 ### Classifiers (50 for each company, 25 per valence)
 
 Riot positive sentences:
+![riot pos](https://github.com/michellecchen/cs72_final/tree/main/confusionData/screenshots/riotPosSS.png?raw=true)
 
 Riot negative sentences:
 
