@@ -24,6 +24,9 @@ This is how the directories are organized:
 ├── program_output.md
 ├── confusionMatrix.ipynb (generates confusion matrices for zero shot classification)
 ├── finetuneBERTreviews.ipynb (contains our BERT, which we finetune)
+├── BERTscores
+│   ├── screenshots of various BERT tuning classification reports, with various parameters
+│   └── `.pt` files storing BERT models with corresponding parameters
 ├── classifiedDataGlassdoor
 │   ├── <zero shot classified pros sentences for each company> (4 files)
 │   └── <zero shot classified cons sentences for each company> (4 files)
