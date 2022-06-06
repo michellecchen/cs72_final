@@ -47,6 +47,8 @@ Out of 46 sentences we labeled as pertaining to compensation and benefits, about
 
 
 ## BERT sentiment analysis
+
+### Running on CPU, batch size 64
 Classification report for BERT fine-tuned with two epochs, 75:16:8 training:validation:testing data split, and 12300 total sentences:
 
 (note: the split was originally 70:15:15, but we were unable to run predictions on the 15% testing dataset using CPU + the normal version of Colaboratory, so we took halved the testing data)
@@ -57,6 +59,10 @@ Classification report for BERT fine-tuned with two epochs, 75:16:8 training:vali
 Classification report for BERT fine-tuned with four epochs, 70:15:15 training:validation:testing data split, and 5171 total sentences:
 
 ![four epochs](https://github.com/michellecchen/cs72_final/blob/main/BERTscores/fourEpochsHalfEverything.png?raw=true)
+
+### Running on GPU, various batch sizes
+
+As you can see, we were only able to achieve 65% accuracy while running with up to four epochs. Each of those CPU training runs also took more than four hours. To be able to run with more epochs, we reduced our batch sizes and asked some friends with GPUs to run the GPU-pushed version of our notebook. On GPU, we were able to train the BERT with batch size 32 and 6 epochs, for example, in around fifteen minutes. 
 
 
 ## Timelines
