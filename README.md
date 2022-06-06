@@ -109,6 +109,11 @@ csv_file.write(url_content)
 csv_file.close()
 ```
 
+### Work Partition
+
+There are two group members: Leah (`nonsensicle`) and Michelle (`michellecchen`). Leah scraped the raw data from Indeed and Glassdoor using page2API and parsed it according to pros and cons by implementing the zero shot classification code. She also implemented the BERT and authored the confusion amtrix generation. Michelle was in charge of timelines--she implemented the `matplotlib` timeline code and did the date parsing / sentiment score aggregation for all the data. She also parsed the neutral testing sets for the fine-tuned BERT. 
+Both were in charge of documentation/writeups and organization. Leah wrote this README--contact them at `leah.ryu.22@dartmouth.edu` with questions.
+
 ### Conda instructions
 
 Make a new anaconda environment called `cs72`. In the anaconda terminal type
