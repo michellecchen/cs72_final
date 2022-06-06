@@ -27,17 +27,24 @@ This is how the directories are organized:
 ├── classifiedDataGlassdoor
 │   ├── <zero shot classified pros sentences for each company> (4 files)
 │   └── <zero shot classified cons sentences for each company> (4 files)
+│   ├── dates
+│   │   ├── <corresponding dates for pros sentences for each co> (4 files)
+│   │   └── <corresponding dates for cons sentences for each co> (4 files)
+│   └──
 ├── classifiedDataIndeed
 │   ├── <zero shot classified neutral sentences for each company> (4 files)
 │   ├── <zero shot classified pros sentences for each company> (4 files)
 │   ├── <zero shot classified cons sentences for each company> (4 files)
-│   ├── <corresponding dates for neutral sentences for each co> (4 files)
-│   ├── <corresponding dates for pros sentences for each co> (4 files)
-│   └── <corresponding dates for cons sentences for each co> (4 files)
+│   ├── dates
+│   │   ├── <corresponding dates for neutral sentences for each co> (4 files)
+│   │   ├── <corresponding dates for pros sentences for each co> (4 files)
+│   │   └── <corresponding dates for cons sentences for each co> (4 files)
+│   └──
 ├── confusionData
 │   ├── <25 zero shot classifiers for negative sentences for each co> (4 files)
 │   ├── <25 zero shot classifiers for positive sentences for each co> (4 files)
-│   ├── screenshots of some confusion matrix results 
+│   ├── screenshots 
+│   │   └── screenshots of some confusion matrix results
 │   ├── confusion matrix for 185 classified sentences (confusionMatrix185.txt)
 │   └── precision, recall, f-score, and support scores for the matrix above (scoresFromMatrix.txt)
 ├── glassDoorZeroShot
