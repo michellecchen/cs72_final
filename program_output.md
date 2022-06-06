@@ -51,12 +51,12 @@ Classification report for BERT fine-tuned with two epochs, 75:16:8 training:vali
 
 (note: the split was originally 70:15:15, but we were unable to run predictions on the 15% testing dataset using CPU + the normal version of Colaboratory, so we took halved the testing data)
 
-
-
-
+![two epochs](https://github.com/michellecchen/cs72_final/blob/main/BERTscores/twoEpochFullTrainValHalfTest.png?raw=true)
 
 
 Classification report for BERT fine-tuned with four epochs, 70:15:15 training:validation:testing data split, and 5171 total sentences:
+
+![four epochs](https://github.com/michellecchen/cs72_final/blob/main/BERTscores/fourEpochsHalfEverything.png?raw=true)
 
 
 ## Timelines
