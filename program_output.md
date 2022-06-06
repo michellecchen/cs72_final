@@ -8,25 +8,39 @@ Third and finally, we will show the output that these two algorithms have been u
 ### Classifiers (50 for each company, 25 per valence)
 
 Riot positive sentences:
-![riot pos](https://github.com/michellecchen/cs72_final/tree/main/confusionData/screenshots/riotPosSS.png?raw=true)
+![riot pos](https://github.com/michellecchen/cs72_final/blob/main/confusionData/screenshots/riotPosSS.png?raw=true)
 
 Riot negative sentences:
+![riot neg](https://github.com/michellecchen/cs72_final/blob/main/confusionData/screenshots/riotNegSS.png?raw=true)
 
 Sony positive sentences:
+![sony pos](https://github.com/michellecchen/cs72_final/blob/main/confusionData/screenshots/sonyPosSS.png?raw=true)
 
 Sony negative sentences:
+![sony neg](https://github.com/michellecchen/cs72_final/blob/main/confusionData/screenshots/sonyNegSS.png?raw=true)
 
 Ubisoft positive sentences:
+![ubisoft pos](https://github.com/michellecchen/cs72_final/blob/main/confusionData/screenshots/ubisoftPosSS.png?raw=true)
 
 Ubisoft negative sentences:
+![ubisoft neg](https://github.com/michellecchen/cs72_final/blob/main/confusionData/screenshots/ubisoftNegSS.png?raw=true)
 
 Activision Blizzard positive sentences:
+![activision pos](https://github.com/michellecchen/cs72_final/blob/main/confusionData/screenshots/actPosSS.png?raw=true)
 
 Activision Blizzard negative sentences:
+![activision neg](https://github.com/michellecchen/cs72_final/blob/main/confusionData/screenshots/actNegSS.png?raw=true)
 
 
 ### Confusion matrix 
-We labeled 185 sentences by hand according to topic, then compared them with the predicted labels:
+We labeled 185 sentences by hand according to topic, then compared them with the predicted labels. As you can see, labels 2 and 6, culture and values and compensation and benefits, are the most contentious, with the highest amount of misclassifications. 
+![zero shot confusion matrix](https://github.com/michellecchen/cs72_final/blob/main/confusionData/screenshots/confusionMatrix.png?raw=true)
+
+### Bonus: classification scores from the confusion matrix
+
+Here we can clearly see the precision, recall, f1 score, and support per label. 
+
+![riot pos](https://github.com/michellecchen/cs72_final/blob/main/confusionData/screenshots/classificationFromMatrix.png?raw=true)
 
 
 
