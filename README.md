@@ -5,11 +5,23 @@ GitHub usernames: michellecchen, nonsensicle
 
 Emails: michelle.chen.22@dartmouth.edu, leah.ryu.22@dartmouth.edu
 
-Welcome to our CS72 (Accelerated Computational Linguistics) final project for spring 2022! Please read through the following, which discusses motivation, algorithms, data, code organization, and setup instructions.
+Welcome to our CS72 (Accelerated Computational Linguistics) final project for spring 2022! Please read through the following, which discusses code organization, motivation, algorithms, data, work partition, and setup instructions.
 
-### Code organization
+### Organization
+
+The final project requirements ask for five modules: our code, our work partition, our data, screenshots of our program's output, and our writeup. Each module can be found in the following location:
+
+1. `Code`: In this repository. The directories `glassDoorZeroShot` and `indeedZeroShot` each contain four files, one notebook corresponding to each company. These files parse our raw `.csv` files and sort them using zero shot classification (please look at the `activision` files in each directory for the program header--the rest of the code is almost the same for each file). `confusionMatrix.ipynb` parses in our `confusionData` and generates a confusion matrix. `finetuneBERTreviews.ipynb` holds all BERT-related code. 
+2. `Work Partition`: In the work partition section of this README file.
+3. `Data`: In this repository. The raw scraped data is in the directory `rawData`. The data which has been classified by topic and valence, which was then used to train our BERT on valence, is in `classifiedDataGlassdoor` and `classifiedDataIndeed`. 
+4. `Screenshots`: These are compiled in `program_output.md`.
+5. `Writeup`: As this is formatted, it is submitted via Canvas. For other readers, please email one of the authors if you would like access to this writeup.
+
+This is how the directories are organized:
+
 ```
 ├── README.md
+├── program_output.md
 ├── confusionMatrix.ipynb (generates confusion matrices for zero shot classification)
 ├── finetuneBERTreviews.ipynb (contains our BERT, which we finetune)
 ├── classifiedDataGlassdoor
@@ -96,6 +108,11 @@ csv_file = open('allActivisionBlizzardIndeed.csv', 'ab')
 csv_file.write(url_content)
 csv_file.close()
 ```
+
+### Work Partition
+
+There are two group members: Leah (`nonsensicle`) and Michelle (`michellecchen`). Leah scraped the raw data from Indeed and Glassdoor using page2API and parsed it according to pros and cons by implementing the zero shot classification code. She also implemented the BERT and authored the confusion amtrix generation. Michelle was in charge of timelines--she implemented the `matplotlib` timeline code and did the date parsing / sentiment score aggregation for all the data. She also parsed the neutral testing sets for the fine-tuned BERT. 
+Both were in charge of documentation/writeups and organization. Leah wrote this README--contact them at `leah.ryu.22@dartmouth.edu` with questions.
 
 ### Conda instructions
 
