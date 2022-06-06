@@ -34,14 +34,16 @@ Activision Blizzard negative sentences:
 
 ### Confusion matrix 
 We labeled 185 sentences by hand according to topic, then compared them with the predicted labels. As you can see, labels 2 and 6, culture and values and compensation and benefits, are the most contentious, with the highest amount of misclassifications. 
-![zero shot confusion matrix](https://github.com/michellecchen/cs72_final/blob/main/confusionData/screenshots/confusionMatrix.png?raw=true)
 
-### Bonus: classification scores from the confusion matrix
+![zero shot confusion matrix](https://github.com/michellecchen/cs72_final/blob/main/confusionData/screenshots/confusionMatrix.png?raw=true)
 
 Here we can clearly see the precision, recall, f1 score, and support per label. 
 
 ![riot pos](https://github.com/michellecchen/cs72_final/blob/main/confusionData/screenshots/classificationFromMatrix.png?raw=true)
 
+Out of 61 sentences that were labeled by us as pertaining to culture and values, only 26 were classified by the model as such; this is most likely because we placed many statements which we found to be ambiguous in this category, whereas the model made a more definitive decision. For example, we might classify a sentence like "Great company to work for" as culture and values, whereas the model might classify it as career opportunities. 
+
+Out of 46 sentences we labeled as pertaining to compensation and benefits, about half were labeled as that, whereas half were labeled as work life balance or culture and values. We used the compensation and benefits label as a sort of trash bin for sentences that we weren't sure how to label, which weren't relevant to any label ("No cons to speak of"), and sentences that weren't actually coherent sentences (one memorable "sentence" was simply "g"). Since the classifier must make a determination and doesn't "throw away" any sentences, this label was bound to have a lower recall.
 
 
 ## BERT sentiment analysis
