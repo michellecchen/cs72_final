@@ -5,7 +5,7 @@ GitHub usernames: michellecchen, nonsensicle
 
 Emails: michelle.chen.22@dartmouth.edu, leah.ryu.22@dartmouth.edu
 
-Welcome to our CS72 (Accelerated Computational Linguistics) final project for spring 2022! Please read through the following, which discusses motivation, algorithms, data, code organization, work partition, and setup instructions.
+Welcome to our CS72 (Accelerated Computational Linguistics) final project for spring 2022! Please read through the following, which discusses code organization, motivation, algorithms, data, work partition, and setup instructions.
 
 ### Organization
 
