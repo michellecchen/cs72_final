@@ -27,6 +27,10 @@ This is how the directories are organized:
 ├── README.md
 ├── program_output.md
 ├── confusionMatrix.ipynb (generates confusion matrices for zero shot classification)
+├── timelines.ipynb (generates all of our plots)
+├── timelines
+│   ├── <sentiment timeline plots for each of six topics for each company using gold-labeled data> (24 total)
+│   └── <sentiment timeline plots for each of six topics for each company using BERT-classified data> (between 0 and 6 for each company)
 ├── BERTcode 
 │   ├── `finetuneBERTreviews.ipynb`, which holds the original BERT tuning which runs on CPU
 │   ├── `GPU_finetuneBERTreviews.ipynb`, wherein the tuning is pushed to GPU & actual classification of Indeed data is run
