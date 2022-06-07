@@ -1,10 +1,56 @@
 # Program outputs 
 
-We have three sorts of output which might be relevant for the reader. The first two pertain to the accuracy of our machine learning models (BART zero shot classification and BERT sentiment analysis). For zero shot classification, we will provide screenshots of both some of the classifiers for both positive and negative sentences for each of the companies, as well as a confusion matrix which evaluates the performance of the classifier in general. This data is also available as `.txt` in the directory `confusionData`. For BERT sentiment analysis, we will provide screenshots of classification reports (accuracy, precision, recall, f1-score, and support) of the fine-tuning results with various sets of parameters.
+We have three sorts of output which might be relevant for the reader. The first two pertain to the accuracy of our machine learning models (BART zero shot classification and BERT sentiment analysis). For zero-shot classification, we will provide screenshots of both some of the classifiers for both positive and negative sentences for each of the companies, as well as a confusion matrix which evaluates the performance of the classifier in general. This data is also available as `.txt` in the directory `confusionData`. For BERT sentiment analysis, we will provide screenshots of classification reports (accuracy, precision, recall, f1-score, and support) of the fine-tuning results with various sets of parameters.
 
-We also show the output that these two algorithms have been used to work toward; a series of timelines which aggregate sentiments over time for each company, per topic (diversity and inclusion, culture and values, work life balance, senior management, career opportunities, compensation and benefits), in relation to major lawsuits brought against the company. For each company, we will visualize the gold labeled (pros/cons sentences from Glassdoor and Indeed) and BERT-predicted data (neutral review bodies from Indeed) separately; the comparison between timelines will, in turn, serve to validate our BERT model's sentiment predictions.
+We also show the output that these two algorithms have been used to work toward; a series of timelines which aggregate sentiments over time for each company, per topic (diversity and inclusion, culture and values, work life balance, senior management, career opportunities, compensation and benefits), in relation to major lawsuits brought against the company. For each company, we will visualize the gold labeled (pros/cons sentences from _Glassdoor_ and _Indeed_) and BERT-predicted data (neutral review bodies from _Indeed_) separately; the comparison between timelines will, in turn, serve to validate our BERT model's sentiment predictions.
 
 ## Timelines
+
+All of these images, as well as their accompanying textual descriptions, can be browsed in our [Figma](https://www.figma.com/file/7mWaWkFRK852axe3XGD6iB/Temporally-located-sentiment-analysis-on-gaming-company-employee-reviews-(CS72)%3A-Timelines?node-id=0%3A1). We highly recommend taking a look: all of these following images can be viewed at their highest possible resolution. The textual descriptions contains clickable in-line links to sources.
+
+### Riot Games
+
+**Gold labels**
+![](https://i.imgur.com/YXied4M.png)
+
+**Unlabeled**
+![](https://i.imgur.com/BWifANR.png)
+
+**Timeline of events**
+![](https://i.imgur.com/Vu14Gyp.png)
+
+### Blizzard
+
+**Gold labels**
+![](https://i.imgur.com/cy63na4.png)
+
+**Unlabeled**
+![](https://i.imgur.com/CUtf12p.png)
+
+**Timeline of events**
+![](https://i.imgur.com/BLEwFXY.png)
+
+### Sony
+
+**Gold labels**
+![](https://i.imgur.com/GlEXbO6.png)
+
+**Unlabeled**
+![](https://i.imgur.com/SzqnBEE.png)
+
+**Timeline of events**
+![](https://i.imgur.com/4Tm9qTv.png)
+
+### Ubisoft
+
+**Gold labels**
+![](https://i.imgur.com/YRp8hgQ.png)
+
+**Unlabeled**
+![](https://i.imgur.com/qOXvUXJ.png)
+
+**Timeline of events**
+![](https://i.imgur.com/tjYKiGK.png)
 
 ## Zero shot classification with BART
 ### Classifiers (50 for each company, 25 per valence)
