@@ -7,6 +7,10 @@ Emails: michelle.chen.22@dartmouth.edu, leah.ryu.22@dartmouth.edu
 
 Welcome to our CS72 (Accelerated Computational Linguistics) final project for spring 2022! Please read through the following, which discusses code organization, motivation, algorithms, data, work partition, and setup instructions.
 
+Here's sneak peek at the outcome of this project; the following plot depicts sentiment over time as related to the topic of "senior management" for the company Riot Games. We've also marked the dates of some major lawsuits; you can see more in `program_output.md`:
+
+![riot management](https://github.com/michellecchen/cs72_final/blob/main/riotManagementPeek.png)
+
 ## Organization
 
 The final project requirements ask for five modules: our code, our work partition, our data, screenshots of our program's output, and our writeup. Each module can be found in the following location:
