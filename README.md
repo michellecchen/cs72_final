@@ -1,15 +1,17 @@
 # Temporally located sentiment analysis on gaming company employee reviews using a fine-tuned BERT
 ## Written by Michelle Chen and Leah Ryu
 
-GitHub usernames: michellecchen, nonsensicle
+**GitHub usernames:** michellecchen, nonsensicle
 
-Emails: michelle.chen.22@dartmouth.edu, leah.ryu.22@dartmouth.edu
+**Emails:** michelle.chen.22@dartmouth.edu, leah.ryu.22@dartmouth.edu
 
 Welcome to our CS72 (Accelerated Computational Linguistics) final project for spring 2022! Please read through the following, which discusses code organization, motivation, algorithms, data, work partition, and setup instructions.
 
-Here's sneak peek at the outcome of this project; the following plot depicts sentiment over time as related to the topic of "senior management" for the company Riot Games. We've also marked the dates of some major lawsuits; you can see more in `program_output.md`:
+You can browse the full outcome of this project at our **[Figma]**(https://www.figma.com/file/7mWaWkFRK852axe3XGD6iB/Temporally-located-sentiment-analysis-on-gaming-company-employee-reviews-(CS72)%3A-Timelines?node-id=0%3A1), which contains all of our timelines — the visualizations of our findings — as well as our research. These can also be seen in `program_output.md`.
 
-![riot management](https://github.com/michellecchen/cs72_final/blob/main/riotManagementPeek.png)
+![](https://i.imgur.com/YXied4M.png)
+
+*An example of our work: The gold-label timelines for Riot Games, displaying how categorized sentiment changes over time, in the context of major events related to litigation against the company.* 
 
 ## Organization
 
