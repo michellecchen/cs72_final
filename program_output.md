@@ -11,45 +11,57 @@ All of these images, as well as their accompanying textual descriptions, can be 
 ### Riot Games
 
 **Gold labels**
+
 ![](https://i.imgur.com/YXied4M.png)
 
 **Unlabeled**
+
 ![](https://i.imgur.com/BWifANR.png)
 
 **Timeline of events**
+
 ![](https://i.imgur.com/Vu14Gyp.png)
 
 ### Blizzard
 
 **Gold labels**
+
 ![](https://i.imgur.com/cy63na4.png)
 
 **Unlabeled**
+
 ![](https://i.imgur.com/CUtf12p.png)
 
 **Timeline of events**
+
 ![](https://i.imgur.com/BLEwFXY.png)
 
 ### Sony
 
 **Gold labels**
+
 ![](https://i.imgur.com/GlEXbO6.png)
 
 **Unlabeled**
+
 ![](https://i.imgur.com/SzqnBEE.png)
 
 **Timeline of events**
+
 ![](https://i.imgur.com/4Tm9qTv.png)
 
 ### Ubisoft
 
 **Gold labels**
+
 ![](https://i.imgur.com/YRp8hgQ.png)
 
 **Unlabeled**
+
 ![](https://i.imgur.com/qOXvUXJ.png)
 
 **Timeline of events**
+
 ![](https://i.imgur.com/tjYKiGK.png)
 
 ## Zero shot classification with BART
