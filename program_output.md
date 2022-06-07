@@ -82,7 +82,7 @@ Report for DistilBERT fine-tuned with 14 epochs (batch size 4:
 
 ![ten epochs](https://github.com/michellecchen/cs72_final/blob/main/BERTscores/distilBERT14epochs4batch1000s.png?raw=true)
 
-#### BERT Large Uncased
+#### BERT Base Uncased
 
 Report for BERT fine-tuned with 12 epochs (batch size 128):
 
