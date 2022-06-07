@@ -2,7 +2,9 @@
 
 We have three sorts of output which might be relevant for the reader. The first two pertain to the accuracy of our machine learning models (BART zero shot classification and BERT sentiment analysis). For zero shot classification, we will provide screenshots of both some of the classifiers for both positive and negative sentences for each of the companies, as well as a confusion matrix which evaluates the performance of the classifier in general. This data is also available as `.txt` in the directory `confusionData`. For BERT sentiment analysis, we will provide screenshots of classification reports (accuracy, precision, recall, f1-score, and support) of the fine-tuning results with various sets of parameters.
 
-Third and finally, we will show the output that these two algorithms have been used to work toward; a series of timelines which aggregate sentiments over time for each company, per topic (diversity and inclusion, culture and values, work life balance, senior management, career opportunities, compensation and benefits), in relation to major lawsuits brought against the company. For each company, we will visualize the gold labeled (pros/cons sentences from Glassdoor and Indeed) and BERT-predicted data (neutral review bodies from Indeed) separately; the comparison between timelines will, in turn, serve to validate our BERT model's sentiment predictions.
+We also show the output that these two algorithms have been used to work toward; a series of timelines which aggregate sentiments over time for each company, per topic (diversity and inclusion, culture and values, work life balance, senior management, career opportunities, compensation and benefits), in relation to major lawsuits brought against the company. For each company, we will visualize the gold labeled (pros/cons sentences from Glassdoor and Indeed) and BERT-predicted data (neutral review bodies from Indeed) separately; the comparison between timelines will, in turn, serve to validate our BERT model's sentiment predictions.
+
+## Timelines
 
 ## Zero shot classification with BART
 ### Classifiers (50 for each company, 25 per valence)
@@ -48,7 +50,7 @@ Out of 46 sentences we labeled as pertaining to compensation and benefits, about
 
 ## BERT sentiment analysis
 
-### Running on CPU, batch size 64
+### Running on CPU
 Classification report for BERT fine-tuned with two epochs, 75:16:8 training:validation:testing data split, and 12300 total sentences:
 
 (note: the split was originally 70:15:15, but we were unable to run predictions on the 15% testing dataset using CPU + the normal version of Colaboratory, so we halved the testing data)
@@ -62,8 +64,39 @@ Classification report for BERT fine-tuned with four epochs, 70:15:15 training:va
 
 ### Running on GPU, various batch sizes
 
-As you can see, we were only able to achieve 65% accuracy while running with up to four epochs. Each of those CPU training runs also took more than four hours. To be able to run with more epochs, we reduced our batch sizes and asked some friends with GPUs to run the GPU-pushed version of our notebook. On GPU, we were able to train the BERT with batch size 32 and 6 epochs, for example, in around fifteen minutes. 
+As you can see, we were only able to achieve 65% accuracy while running with up to four epochs. Each of those CPU training runs also took more than four hours. To be able to run with more epochs, we reduced our batch sizes and asked some friends with GPUs to run the GPU-pushed version of our notebook. On GPU, we were able to train the BERT with batch size 32 and 6 epochs, for example, in around fifteen minutes--a massive improvement over the hours it took to fine-tune BERT on CPU for even a few epochs. We also tried experimenting with DistilBERT--fine-tuning DistilBERT ran even faster, but to lesser accuracy. 
+
+The following fine-tuned models were all tested on 1000 samples owing to GPU memory constraints. They were all trained on a total of 12300 sentences, split 70:15:15 training:validation:testing. 
+
+#### DistilBERT
+
+Report for DistilBERT fine-tuned with 4 epochs (batch size 32):
+
+![four epochs](https://github.com/michellecchen/cs72_final/blob/main/BERTscores/distilBERT4epochs32batch1000s.png?raw=true)
+
+Report for DistilBERT fine-tuned with 10 epochs (batch size 4:
+
+![ten epochs](https://github.com/michellecchen/cs72_final/blob/main/BERTscores/distilBERT10epochs4batch1000s.png?raw=true)
+
+Report for DistilBERT fine-tuned with 14 epochs (batch size 4:
+
+![ten epochs](https://github.com/michellecchen/cs72_final/blob/main/BERTscores/distilBERT14epochs4batch1000s.png?raw=true)
+
+#### BERT Large Uncased
+
+Report for BERT fine-tuned with 12 epochs (batch size 128):
+
+![twelve epochs](https://github.com/michellecchen/cs72_final/blob/main/BERTscores/BERT12epochs128batch1000s.png?raw=true)
+
+Report for BERT fine-tuned with 16 epochs (batch size 64):
+
+![sixteen epochs](https://github.com/michellecchen/cs72_final/blob/main/BERTscores/BERT16epochs64batch1000s.png?raw=true)
+
+Report for BERT fine-tuned with 18 epochs (batch size 64):
+
+![eighteen epochs](https://github.com/michellecchen/cs72_final/blob/main/BERTscores/BERT18E.png?raw=true)
+
+We achieved maximum accuracy with the BERT fine-tuned for 16 epochs at 81%--the accuracy fell of very slightly again with 18 epochs to 79%, perhaps as a result of overfitting or perhaps randomly. In either case, since these two BERTs were of similar quality, we used the smaller and more accurate of the two to classify our Indeed neutral sentences.
 
 
-## Timelines
 
